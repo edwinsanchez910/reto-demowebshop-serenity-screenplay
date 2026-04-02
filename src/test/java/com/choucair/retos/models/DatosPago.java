@@ -1,5 +1,3 @@
-package com.example.retos.models;
-
 public class DatosPago {
 
     private final String tipoTarjeta;

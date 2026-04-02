@@ -1,13 +1,13 @@
-package com.example.retos.questions;
+package com.choucair.retos.questions;
 
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Question;
 import net.serenitybdd.screenplay.abilities.BrowseTheWeb;
 
-import static com.example.retos.userinterfaces.CarritoPage.MENSAJE_ORDEN_EXITOSA;
-import static com.example.retos.userinterfaces.HomePage.BOTON_LOGOUT;
-import static com.example.retos.userinterfaces.HomePage.CONTADOR_CARRITO;
-import static com.example.retos.userinterfaces.HomePage.USUARIO_LOGUEADO;
+import static com.choucair.retos.userinterfaces.CarritoPage.MENSAJE_ORDEN_EXITOSA;
+import static com.choucair.retos.userinterfaces.HomePage.BOTON_LOGOUT;
+import static com.choucair.retos.userinterfaces.HomePage.CONTADOR_CARRITO;
+import static com.choucair.retos.userinterfaces.HomePage.USUARIO_LOGUEADO;
 
 public class OrdenProcesadaCorrectamente implements Question<Boolean> {
 
