@@ -1,3 +1,9 @@
+<<<<<<< HEAD
+package com.choucair.retos.models;
+=======
+package com.example.retos.models;
+>>>>>>> b1603cb (feat: automate end-to-end purchase flow in Demo Web Shop)
+
 public class DatosPago {
 
     private final String tipoTarjeta;

@@ -1,4 +1,8 @@
+<<<<<<< HEAD
+package com.choucair.retos.userinterfaces;
+=======
 package com.example.retos.userinterfaces;
+>>>>>>> b1603cb (feat: automate end-to-end purchase flow in Demo Web Shop)
 
 import net.serenitybdd.screenplay.targets.Target;
 import org.openqa.selenium.By;

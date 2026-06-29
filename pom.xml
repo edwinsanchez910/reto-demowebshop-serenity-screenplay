@@ -4,8 +4,13 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
+<<<<<<< HEAD
+    <groupId>com.choucair.reto</groupId>
+    <artifactId>RetoChoucairAutomation</artifactId>
+=======
     <groupId>com.example.reto</groupId>
     <artifactId>reto-automation</artifactId>
+>>>>>>> b1603cb (feat: automate end-to-end purchase flow in Demo Web Shop)
     <version>1.0-SNAPSHOT</version>
 
     <properties>

@@ -32,7 +32,11 @@ Automatizar el flujo completo de un usuario nuevo:
 ## Estructura del Proyecto
 
 ```text
+<<<<<<< HEAD
+src/test/java/com/choucair/retos/
+=======
 src/test/java/com/example/retos/
+>>>>>>> b1603cb (feat: automate end-to-end purchase flow in Demo Web Shop)
 |-- runners
 |   `-- RunnerTags.java
 |-- stepdefinitions
@@ -53,7 +57,11 @@ src/test/java/com/example/retos/
 `-- questions
 
 src/test/resources/features/
+<<<<<<< HEAD
+`-- reto_choucair.feature
+=======
 `-- reto.feature
+>>>>>>> b1603cb (feat: automate end-to-end purchase flow in Demo Web Shop)
 ```
 
 ## Patron Utilizado
@@ -89,7 +97,11 @@ El escenario principal valida:
 
 Ejecutar la clase:
 
+<<<<<<< HEAD
+`src/test/java/com/choucair/retos/runners/RunnerTags.java`
+=======
 `src/test/java/com/example/retos/runners/RunnerTags.java`
+>>>>>>> b1603cb (feat: automate end-to-end purchase flow in Demo Web Shop)
 
 ### Desde consola
 

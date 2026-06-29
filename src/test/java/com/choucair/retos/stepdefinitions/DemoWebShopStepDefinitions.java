@@ -1,3 +1,18 @@
+<<<<<<< HEAD
+package com.choucair.retos.stepdefinitions;
+
+import com.choucair.retos.tasks.Abrir;
+import com.choucair.retos.tasks.AgregarProductoAlCarrito;
+import com.choucair.retos.tasks.ConfirmarOrden;
+import com.choucair.retos.tasks.IniciarSesion;
+import com.choucair.retos.tasks.IrAlCarritoYCheckout;
+import com.choucair.retos.tasks.LlenarBillingAddress;
+import com.choucair.retos.tasks.LlenarInformacionPago;
+import com.choucair.retos.tasks.NavegarCategoria;
+import com.choucair.retos.questions.OrdenProcesadaCorrectamente;
+import com.choucair.retos.tasks.RegistrarUsuario;
+import com.choucair.retos.tasks.SeleccionarMetodoPagoTarjeta;
+=======
 package com.example.retos.stepdefinitions;
 
 import com.example.retos.tasks.Abrir;
@@ -11,6 +26,7 @@ import com.example.retos.tasks.NavegarCategoria;
 import com.example.retos.questions.OrdenProcesadaCorrectamente;
 import com.example.retos.tasks.RegistrarUsuario;
 import com.example.retos.tasks.SeleccionarMetodoPagoTarjeta;
+>>>>>>> b1603cb (feat: automate end-to-end purchase flow in Demo Web Shop)
 import io.cucumber.java.Before;
 import io.cucumber.java.es.Cuando;
 import io.cucumber.java.es.Dado;
@@ -21,9 +37,15 @@ import net.serenitybdd.screenplay.actors.OnStage;
 import net.serenitybdd.screenplay.actors.OnlineCast;
 import net.serenitybdd.screenplay.waits.WaitUntil;
 
+<<<<<<< HEAD
+import static com.choucair.retos.userinterfaces.CarritoPage.MENSAJE_ORDEN_EXITOSA;
+import static com.choucair.retos.userinterfaces.RegistroPage.MENSAJE_EMAIL_EXISTENTE;
+import static com.choucair.retos.userinterfaces.RegistroPage.MENSAJE_REGISTRO_EXITOSO;
+=======
 import static com.example.retos.userinterfaces.CarritoPage.MENSAJE_ORDEN_EXITOSA;
 import static com.example.retos.userinterfaces.RegistroPage.MENSAJE_EMAIL_EXISTENTE;
 import static com.example.retos.userinterfaces.RegistroPage.MENSAJE_REGISTRO_EXITOSO;
+>>>>>>> b1603cb (feat: automate end-to-end purchase flow in Demo Web Shop)
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isVisible;
 import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
