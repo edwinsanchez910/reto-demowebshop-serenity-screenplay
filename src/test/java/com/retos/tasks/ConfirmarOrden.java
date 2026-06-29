@@ -1,12 +1,6 @@
-<<<<<<< HEAD
-package com.choucair.retos.tasks;
+package com.retos.tasks;
 
-import com.choucair.retos.userinterfaces.CarritoPage;
-=======
-package com.example.retos.tasks;
-
-import com.example.retos.userinterfaces.CarritoPage;
->>>>>>> b1603cb (feat: automate end-to-end purchase flow in Demo Web Shop)
+import com.retos.userinterfaces.CarritoPage;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.Tasks;
@@ -20,6 +14,9 @@ public class ConfirmarOrden implements Task {
 
     @Override
     public <T extends Actor> void performAs(T actor) {
-        actor.attemptsTo(Click.on(CarritoPage.BOTON_CONFIRMAR_ORDEN));
+        actor.attemptsTo(
+                net.serenitybdd.screenplay.waits.WaitUntil.the(CarritoPage.BOTON_CONFIRMAR_ORDEN, net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isVisible()).forNoMoreThan(10).seconds(),
+                Click.on(CarritoPage.BOTON_CONFIRMAR_ORDEN)
+        );
     }
 }

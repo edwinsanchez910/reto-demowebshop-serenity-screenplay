@@ -1,12 +1,6 @@
-<<<<<<< HEAD
-package com.choucair.retos.tasks;
+package com.retos.tasks;
 
-import com.choucair.retos.userinterfaces.HomePage;
-=======
-package com.example.retos.tasks;
-
-import com.example.retos.userinterfaces.HomePage;
->>>>>>> b1603cb (feat: automate end-to-end purchase flow in Demo Web Shop)
+import com.retos.userinterfaces.HomePage;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.Tasks;

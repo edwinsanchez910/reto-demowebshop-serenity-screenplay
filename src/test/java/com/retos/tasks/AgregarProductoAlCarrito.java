@@ -1,12 +1,6 @@
-<<<<<<< HEAD
-package com.choucair.retos.tasks;
+package com.retos.tasks;
 
-import com.choucair.retos.userinterfaces.ProductoPage;
-=======
-package com.example.retos.tasks;
-
-import com.example.retos.userinterfaces.ProductoPage;
->>>>>>> b1603cb (feat: automate end-to-end purchase flow in Demo Web Shop)
+import com.retos.userinterfaces.ProductoPage;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.Tasks;
@@ -21,7 +15,10 @@ public class AgregarProductoAlCarrito implements Task {
     @Override
     public <T extends Actor> void performAs(T actor) {
         actor.attemptsTo(
+                // Esperar a que el producto esté visible y luego agregar
+                net.serenitybdd.screenplay.waits.WaitUntil.the(ProductoPage.PRODUCTO_NOTEBOOK, net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isVisible()).forNoMoreThan(10).seconds(),
                 Click.on(ProductoPage.PRODUCTO_NOTEBOOK),
+                net.serenitybdd.screenplay.waits.WaitUntil.the(ProductoPage.BOTON_AGREGAR_AL_CARRITO, net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isVisible()).forNoMoreThan(10).seconds(),
                 Click.on(ProductoPage.BOTON_AGREGAR_AL_CARRITO)
         );
     }

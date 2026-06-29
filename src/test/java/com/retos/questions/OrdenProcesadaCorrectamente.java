@@ -1,24 +1,13 @@
-<<<<<<< HEAD
-package com.choucair.retos.questions;
-=======
-package com.example.retos.questions;
->>>>>>> b1603cb (feat: automate end-to-end purchase flow in Demo Web Shop)
+package com.retos.questions;
 
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Question;
 import net.serenitybdd.screenplay.abilities.BrowseTheWeb;
 
-<<<<<<< HEAD
-import static com.choucair.retos.userinterfaces.CarritoPage.MENSAJE_ORDEN_EXITOSA;
-import static com.choucair.retos.userinterfaces.HomePage.BOTON_LOGOUT;
-import static com.choucair.retos.userinterfaces.HomePage.CONTADOR_CARRITO;
-import static com.choucair.retos.userinterfaces.HomePage.USUARIO_LOGUEADO;
-=======
-import static com.example.retos.userinterfaces.CarritoPage.MENSAJE_ORDEN_EXITOSA;
-import static com.example.retos.userinterfaces.HomePage.BOTON_LOGOUT;
-import static com.example.retos.userinterfaces.HomePage.CONTADOR_CARRITO;
-import static com.example.retos.userinterfaces.HomePage.USUARIO_LOGUEADO;
->>>>>>> b1603cb (feat: automate end-to-end purchase flow in Demo Web Shop)
+import static com.retos.userinterfaces.CarritoPage.MENSAJE_ORDEN_EXITOSA;
+import static com.retos.userinterfaces.HomePage.BOTON_LOGOUT;
+import static com.retos.userinterfaces.HomePage.CONTADOR_CARRITO;
+import static com.retos.userinterfaces.HomePage.USUARIO_LOGUEADO;
 
 public class OrdenProcesadaCorrectamente implements Question<Boolean> {
 
@@ -29,6 +18,7 @@ public class OrdenProcesadaCorrectamente implements Question<Boolean> {
     @Override
     public Boolean answeredBy(Actor actor) {
         String correoRegistrado = actor.recall("correoRegistrado");
+        if (correoRegistrado == null) return false;
         String urlActual = BrowseTheWeb.as(actor).getDriver().getCurrentUrl();
 
         return USUARIO_LOGUEADO.resolveFor(actor).getText().contains(correoRegistrado)

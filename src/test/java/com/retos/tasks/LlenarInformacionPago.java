@@ -1,14 +1,7 @@
-<<<<<<< HEAD
-package com.choucair.retos.tasks;
+package com.retos.tasks;
 
-import com.choucair.retos.models.DatosPago;
-import com.choucair.retos.userinterfaces.CarritoPage;
-=======
-package com.example.retos.tasks;
-
-import com.example.retos.models.DatosPago;
-import com.example.retos.userinterfaces.CarritoPage;
->>>>>>> b1603cb (feat: automate end-to-end purchase flow in Demo Web Shop)
+import com.retos.models.DatosPago;
+import com.retos.userinterfaces.CarritoPage;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.Tasks;
@@ -30,6 +23,9 @@ public class LlenarInformacionPago implements Task {
 
     @Override
     public <T extends Actor> void performAs(T actor) {
+        // Validate payment data before interacting with the UI
+        datosPago.validate();
+
         actor.attemptsTo(
                 SelectFromOptions.byVisibleText(datosPago.getTipoTarjeta()).from(CarritoPage.SELECT_TIPO_TARJETA),
                 Enter.theValue(datosPago.getNombreTitular()).into(CarritoPage.CAMPO_NOMBRE_TITULAR),

@@ -1,14 +1,7 @@
-<<<<<<< HEAD
-package com.choucair.retos.tasks;
+package com.retos.tasks;
 
-import com.choucair.retos.models.DatosRegistro;
-import com.choucair.retos.userinterfaces.RegistroPage;
-=======
-package com.example.retos.tasks;
-
-import com.example.retos.models.DatosRegistro;
-import com.example.retos.userinterfaces.RegistroPage;
->>>>>>> b1603cb (feat: automate end-to-end purchase flow in Demo Web Shop)
+import com.retos.models.DatosRegistro;
+import com.retos.userinterfaces.RegistroPage;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.Tasks;
@@ -29,6 +22,9 @@ public class RegistrarUsuario implements Task {
 
     @Override
     public <T extends Actor> void performAs(T actor) {
+        // Validate registration data before using it
+        datosRegistro.validate();
+
         String correo = "usuario" + System.currentTimeMillis() + "@mailinator.com";
         String password = datosRegistro.getPassword();
 
@@ -42,6 +38,7 @@ public class RegistrarUsuario implements Task {
                 Enter.theValue(correo).into(RegistroPage.EMAIL),
                 Enter.theValue(password).into(RegistroPage.PASSWORD),
                 Enter.theValue(password).into(RegistroPage.CONFIRMAR_PASSWORD),
+                net.serenitybdd.screenplay.waits.WaitUntil.the(RegistroPage.BOTON_REGISTRAR, net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isVisible()).forNoMoreThan(10).seconds(),
                 Click.on(RegistroPage.BOTON_REGISTRAR)
         );
     }

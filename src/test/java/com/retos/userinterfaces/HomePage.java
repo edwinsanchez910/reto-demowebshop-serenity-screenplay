@@ -1,8 +1,4 @@
-<<<<<<< HEAD
-package com.choucair.retos.userinterfaces;
-=======
-package com.example.retos.userinterfaces;
->>>>>>> b1603cb (feat: automate end-to-end purchase flow in Demo Web Shop)
+package com.retos.userinterfaces;
 
 import net.serenitybdd.annotations.DefaultUrl;
 import net.serenitybdd.core.pages.PageObject;

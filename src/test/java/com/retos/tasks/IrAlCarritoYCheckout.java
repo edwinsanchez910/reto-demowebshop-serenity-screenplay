@@ -1,14 +1,7 @@
-<<<<<<< HEAD
-package com.choucair.retos.tasks;
+package com.retos.tasks;
 
-import com.choucair.retos.userinterfaces.CarritoPage;
-import com.choucair.retos.userinterfaces.HomePage;
-=======
-package com.example.retos.tasks;
-
-import com.example.retos.userinterfaces.CarritoPage;
-import com.example.retos.userinterfaces.HomePage;
->>>>>>> b1603cb (feat: automate end-to-end purchase flow in Demo Web Shop)
+import com.retos.userinterfaces.CarritoPage;
+import com.retos.userinterfaces.HomePage;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.Tasks;
@@ -23,7 +16,10 @@ public class IrAlCarritoYCheckout implements Task {
     @Override
     public <T extends Actor> void performAs(T actor) {
         actor.attemptsTo(
+                // Esperar a que el link del carrito esté visible
+                net.serenitybdd.screenplay.waits.WaitUntil.the(HomePage.LINK_CARRITO, net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isVisible()).forNoMoreThan(10).seconds(),
                 Click.on(HomePage.LINK_CARRITO),
+                net.serenitybdd.screenplay.waits.WaitUntil.the(CarritoPage.CHECKBOX_TERMINOS, net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isVisible()).forNoMoreThan(10).seconds(),
                 Click.on(CarritoPage.CHECKBOX_TERMINOS),
                 Click.on(CarritoPage.BOTON_CHECKOUT)
         );

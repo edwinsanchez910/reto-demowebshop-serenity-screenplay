@@ -1,12 +1,6 @@
-<<<<<<< HEAD
-package com.choucair.retos.tasks;
+package com.retos.tasks;
 
-import com.choucair.retos.userinterfaces.CarritoPage;
-=======
-package com.example.retos.tasks;
-
-import com.example.retos.userinterfaces.CarritoPage;
->>>>>>> b1603cb (feat: automate end-to-end purchase flow in Demo Web Shop)
+import com.retos.userinterfaces.CarritoPage;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.Tasks;
@@ -23,11 +17,8 @@ public class LlenarBillingAddress implements Task {
     @Override
     public <T extends Actor> void performAs(T actor) {
         actor.attemptsTo(
-<<<<<<< HEAD
-=======
                 // Esperar a que el selector de pais esté visible antes de interactuar
                 net.serenitybdd.screenplay.waits.WaitUntil.the(CarritoPage.SELECT_COUNTRY, net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isVisible()).forNoMoreThan(15).seconds(),
->>>>>>> b1603cb (feat: automate end-to-end purchase flow in Demo Web Shop)
                 SelectFromOptions.byVisibleText("Colombia").from(CarritoPage.SELECT_COUNTRY),
                 SelectFromOptions.byVisibleText("Other (Non US)").from(CarritoPage.SELECT_STATE),
                 Enter.theValue("Bogota").into(CarritoPage.CAMPO_CITY),

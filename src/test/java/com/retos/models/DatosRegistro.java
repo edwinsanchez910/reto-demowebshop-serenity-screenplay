@@ -1,8 +1,4 @@
-<<<<<<< HEAD
-package com.choucair.retos.models;
-=======
-package com.example.retos.models;
->>>>>>> b1603cb (feat: automate end-to-end purchase flow in Demo Web Shop)
+package com.retos.models;
 
 public class DatosRegistro {
 
@@ -17,13 +13,9 @@ public class DatosRegistro {
     }
 
     public static DatosRegistro porDefecto() {
-<<<<<<< HEAD
-        return new DatosRegistro("Brandon", "Lopez", "Choucair123*");
-=======
         // Generar una contraseña por defecto no vacía para evitar problemas en login de pruebas
         String pwd = "AutoPass" + System.currentTimeMillis();
         return new DatosRegistro("Brandon", "Lopez", pwd);
->>>>>>> b1603cb (feat: automate end-to-end purchase flow in Demo Web Shop)
     }
 
     public String getNombre() {
@@ -36,5 +28,17 @@ public class DatosRegistro {
 
     public String getPassword() {
         return password;
+    }
+
+    public void validate() {
+        if (nombre == null || nombre.trim().isEmpty()) {
+            throw new IllegalArgumentException("Nombre no puede estar vacío");
+        }
+        if (apellido == null || apellido.trim().isEmpty()) {
+            throw new IllegalArgumentException("Apellido no puede estar vacío");
+        }
+        if (password == null || password.length() < 8) {
+            throw new IllegalArgumentException("Password inválida: debe tener al menos 8 caracteres");
+        }
     }
 }
